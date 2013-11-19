@@ -13,6 +13,7 @@
  */
 
 #include "StdAfx.h"
+#include <VersionHelpers.h>
 #include "Globals.h"
 
 #ifdef _DEBUG
@@ -25,10 +26,14 @@
  */
 static BOOL IsNT(void)
 {
+    // GetVersionExW was declared deprecated
+    return IsWindowsXPOrGreater();
+    /*
 	OSVERSIONINFO osvi;
 	osvi.dwOSVersionInfoSize = sizeof(osvi);
 	GetVersionEx(&osvi);
 	return (osvi.dwPlatformId >= VER_PLATFORM_WIN32_NT);
+    */
 }
 
 /// BugTrap module handle.

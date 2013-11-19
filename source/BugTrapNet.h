@@ -20,6 +20,8 @@
 
 #pragma managed
 
+#pragma warning(disable:4369)
+
 using namespace System;
 using namespace System::Threading;
 using namespace System::Windows::Forms;
